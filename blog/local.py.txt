@@ -1,0 +1,26 @@
+"""
+Example settings for local development
+
+Use this file as a base for your local development settings and copy
+it to mysite/settings/local.py. It should not be checked into
+your code repository.
+
+"""
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+
+ADMINS = (
+    ('You', 'your@email'),
+)
+MANAGERS = ADMINS
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}

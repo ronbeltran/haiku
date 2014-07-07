@@ -20,9 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'e^yqgrxl7i@0vjvy1g8d7hs2%c=r2#xv20&%mhu1b*&6kg&pjt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -65,7 +65,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-ph'
 
 TIME_ZONE = 'UTC'
 
@@ -104,3 +104,15 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+
+#
+# Local Settings
+#
+try:
+    LOCAL_SETTINGS
+except NameError:
+    try:
+        from local import *
+    except ImportError:
+        pass
